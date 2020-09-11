@@ -1,0 +1,109 @@
+@import 'config';
+
+
+//------ Main style ------//
+
+$mainPink: #f2ae9c;
+$mainOrange: #e8663c;
+$mainFont: 12px;
+
+.container {
+    max-width: 960px;
+}
+
+
+//------ Header ------//
+
+.header {
+    height: 80px;
+    align-items: center;
+}
+
+.header__logo span{
+
+    &:nth-child(1){
+        font-size: 36px;
+        color: $mainOrange;
+    }
+
+    &:nth-child(2){
+        font-size: 36px;
+        color: $mainPink;
+    }
+
+}
+
+.menu__item {
+    margin-left: 28px;
+
+    a {
+        color: black;
+        font-weight: 700;
+        font-size: 16px;
+        opacity: 0.6;
+        &:hover {
+            color: $mainOrange
+        }
+    }
+
+    @media screen and (max-width: 991px){
+        text-align: center;
+        margin-right: 25px;
+        a:hover {
+            background: white;
+            color: $mainOrange;
+        }
+    }
+
+}
+
+.menu__burger {
+    display: none;
+    margin-top: 10px;
+
+    .hamburger {
+        z-index: 99;
+    }
+
+    @media screen and (max-width: 991px){
+        display: block;
+        margin-right: 10px;
+    }
+
+    .hamburger-inner {
+        height: 3px;
+        &::before, &::after {
+            height: 3px;
+        }
+    }
+}
+
+
+.menu__list {
+
+    @media screen and (max-width: 991px){
+        background: $mainOrange;
+        position: fixed;
+        right: -300px;
+        top: 0;
+        height: 100%;
+        width: 300px;
+        transition: 1s;
+        border-left: solid 2px red;
+
+        .navbar-nav {
+            margin-top: 100px;
+        }
+
+    }
+
+    li {
+        margin: 10px 0;
+    }
+
+}
+
+.open-menu {
+    right: 0;
+    transition: 1s;  
+}
