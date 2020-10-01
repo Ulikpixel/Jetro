@@ -13,6 +13,7 @@ $mainFont: 12px;
 
 button, button:active, button:focus {
     outline: none;
+    border: none;
 }
 
 
@@ -763,7 +764,7 @@ button, button:active, button:focus {
         p {
             color: $mainOrange;
             font-weight: 700;
-            
+
             @media screen and (max-width: 575px){
                 text-align: center;
             }
@@ -861,6 +862,269 @@ button, button:active, button:focus {
                     font-size: 14px;
                     color: rgb(136, 136, 136); 
                     opacity: 0.6;
+                }
+            }
+        }
+    }
+}
+
+
+//----- portfolio -----//
+
+.portfolio__title {
+    min-height: 61px;
+    margin: 20px 0;
+}
+
+.portfolio__block {
+    width: 100%;
+    height: 80px;
+    background: $mainOrange;
+    padding: 10px 20px;
+
+    &::before {
+        content: "";
+        background: $mainPink;
+        width: 120px;
+        height: 80px;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        z-index: -10;
+    }
+
+    &::after {
+        content: "";
+        background: $mainPink;
+        width: 120px;
+        height: 80px;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        z-index: -10;
+    }
+
+    h1 {
+        font-size: 30px;
+        color: white;
+        margin-top: 10px;
+    }
+}
+
+.portfolio__gallery {
+    margin: 40px 0;
+
+    .gallery__photos {
+        text-align: center;
+    }
+
+    .portfolio__btn {
+        margin: 25px 0;
+
+        button {
+            margin: 10px 0;
+            margin-right: 10px;
+            padding: 5px 10px;
+            font-weight: 600;
+            color: rgb(110, 110, 110);
+
+            &:hover {
+                background: $mainOrange;
+                color: white;
+            }
+
+            &.btn-photo {
+                background: $mainOrange;
+                color: white;
+            }
+        }
+    }
+
+    .photos__block {
+        margin: 20px auto;
+
+        @media screen and (max-width: 991px){
+            margin: 10px auto;
+        }
+
+        img {
+            width: 220px;
+            height: 185px;
+            cursor: pointer;
+
+            @media screen and (max-width: 991px){
+                width: 110px;
+                height: 93px;
+            }
+        }
+
+        .photos__description {
+            border: solid 1px rgb(155, 152, 152);
+            width: 220px;
+            min-height: 65px;
+            padding: 5px 10px;
+            border-top: none;
+            margin: 0 auto;
+
+            @media screen and (max-width: 991px){
+                width: 110px;
+                height: 93px;
+            }
+
+            h4 {
+                font-size: 16px;
+                font-weight: 700;
+                color: rgb(117, 117, 117);
+                margin-top: 15px;
+                
+                @media screen and (max-width: 991px){
+                    font-size: 14px;
+                }
+            }
+
+            p {
+                font-size: 12px;
+                color: $mainOrange;
+                font-weight: 700;
+                position: relative;
+                bottom: 5px;
+
+                @media screen and (max-width: 991px){
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}
+
+
+//------- contact us --------//
+
+
+.contact__title {
+    min-height: 61px;
+    margin: 20px 0;
+}
+
+.contact__block {
+    width: 100%;
+    height: 60px;
+    background: $mainOrange;
+    padding: 10px 20px;
+
+    &::before {
+        content: "";
+        background: $mainPink;
+        width: 120px;
+        height: 60px;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        z-index: -10;
+    }
+
+    &::after {
+        content: "";
+        background: $mainPink;
+        width: 120px;
+        height: 60px;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        z-index: -10;
+    }
+
+    h1 {
+        font-size: 24px;
+        color: white;
+        margin-top: 5px;
+    }
+}
+
+
+//------ contact us -------//
+
+.contact__section {
+    margin: 40px 0;
+    
+    img {
+        max-width: 100%;
+        max-height: 480px;
+    }
+
+    .contact__main {
+        display: flex;
+        margin-top: 40px;
+
+        @media screen and (max-width: 991px){
+            flex-direction: column;
+        }
+        
+        .contact__details {
+            width: 200px;
+            min-height: 225px;
+            border: solid 2px $mainOrange;
+            padding: 10px;
+
+            @media screen and (max-width: 991px){
+                margin: 0 auto;
+                margin-bottom: 40px;
+            }
+
+            p {
+                font-size: 14px;
+                color: rgb(139, 139, 139);
+
+                span {
+                    color: $mainOrange;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .contact__form {
+            margin-left: 80px;
+
+            @media screen and (max-width: 991px){
+                margin: 0 auto;
+            }
+
+            form {
+
+                input {
+                    display: block;
+                    margin-bottom: 10px;
+                    color: $mainOrange;
+                    font-weight: 600;
+                    padding: 5px 10px;
+                    border: solid 2px $mainOrange;
+
+                    @media screen and (max-width: 991px){
+                        margin: 20px auto;
+                    }
+
+                    &::placeholder {
+                        color: $mainOrange;
+                    }
+
+                    &[type="button"]{
+                        color: white;
+                        background: $mainOrange;
+                        transition: 1s;
+
+                        &:hover {
+                            color: $mainOrange;
+                            background: white;
+                            transition: 1s;
+                        }
+                    }
+                }
+
+                textarea {
+                    border: solid 2px $mainOrange;
+                    padding: 20px;
+                    color: $mainOrange;
+                    font-weight: 500;
                 }
             }
         }

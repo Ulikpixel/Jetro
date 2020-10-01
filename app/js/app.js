@@ -75,6 +75,50 @@ $(function() {
     });
 
 
+    //-------- gallery --------//
+
+    $('.portfolio__btn').on('click', e => {
+
+      if(e.target.className == "photo__all"){
+        $('.photos__block').show();
+        $('.portfolio__btn button').removeClass('btn-photo');
+        $('.photo__all').addClass('btn-photo');
+      }
+
+      else if(e.target.className == "photo__print"){
+        $('.photos__block').hide();
+        $('.photos__block:even').show();
+        $('.portfolio__btn button').removeClass('btn-photo');
+        $('.photo__print').addClass('btn-photo');
+      }
+
+      else if(e.target.className == "photo__web"){
+        $('.photos__block').hide();
+        $('.photos__block:odd').show();
+        $('.portfolio__btn button').removeClass('btn-photo');
+        $('.photo__web').addClass('btn-photo');
+      }
+
+      else if(e.target.className == "photo__photoshop"){
+        $('.photos__block').hide();
+        $('.photos__block:eq(4)').show();
+        $('.photos__block:eq(5)').show();
+        $('.photos__block:eq(6)').show();
+        $('.portfolio__btn button').removeClass('btn-photo');
+        $('.photo__photoshop').addClass('btn-photo');
+      }
+
+      else if(e.target.className == "photo__wordpress"){
+        $('.photos__block').hide();
+        $('.photos__block:eq(8)').show();
+        $('.photos__block:eq(9)').show();
+        $('.photos__block:eq(3)').show();
+        $('.portfolio__btn button').removeClass('btn-photo');
+        $('.photo__wordpress').addClass('btn-photo');
+      }
+    });
+
+
 
 });
 
