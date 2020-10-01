@@ -64,6 +64,16 @@ function browsersync() {
 	})
 }
 
+function buildcopy(){
+	return src([
+		'app/css/**/*.min.css',
+		'app/js/**/*.min.js',
+		'app/images/dest/**/*',
+		'app/**/*.html',
+	], { base: 'app' })
+	.pipe(dest('dist'));
+}
+
 function scripts() {
 	return src(paths.scripts.src)
 	.pipe(concat(paths.jsOutputName))
@@ -122,4 +132,5 @@ exports.scripts     = scripts;
 exports.images      = images;
 exports.cleanimg    = cleanimg;
 exports.deploy      = deploy;
+exports.build       = series(styles, scripts, images, buildcopy);
 exports.default     = parallel(images, styles, scripts, browsersync, startwatch);
